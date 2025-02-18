@@ -604,12 +604,6 @@ static const NSRange kEmptyRange = { NSNotFound, 0 };
     double deltaX = [event scrollingDeltaX];
     double deltaY = [event scrollingDeltaY];
 
-    if ([event hasPreciseScrollingDeltas])
-    {
-        deltaX *= 0.1;
-        deltaY *= 0.1;
-    }
-
     if (fabs(deltaX) > 0.0 || fabs(deltaY) > 0.0)
         _glfwInputScroll(window, deltaX, deltaY);
 }
